@@ -4,6 +4,7 @@ node_modules
 /dist
 /docs
 /build
+/logs
 
 # local env files
 .env.local
