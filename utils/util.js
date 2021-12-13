@@ -68,6 +68,8 @@ module.exports = {
   getTreeMenu(rootList, id, list) {
     for (let i = 0; i < rootList.length; i++) {
       let item = rootList[i]
+      console.log('item', item)
+      console.log('itemDoc', item._doc)
       // 这里要注意，做一层浅拷贝，防止改变原对象，还有MongoDB里面，id本身是Buffer类型的，需要转成字符串才能做字符串操作
       if (String(item.parentId.slice().pop()) == String(id)) {
         // 往库里去push对象的时候，需要通过_doc属性获取文档对象

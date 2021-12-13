@@ -14,10 +14,16 @@ const getMenuList = async (ctx) => {
     menuState,
   })
 
+  console.log('params', params)
+
   const menuList = (await MenuModel.find(params)) || []
+
+  console.log('menuList', menuList)
 
   // 对查询到的结果进行处理——拼装成树形结构，方便前端处理
   const permissionList = util.getTreeMenu(menuList, null, [])
+
+  console.log('permissionList', permissionList)
 
   ctx.body = util.success(permissionList)
 }
